@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>    
+
+        //Inputs value from user
+        var string1=prompt("Enter any word to know whether palindrome or not","");
+        pdict=
+            {ada:"aad", aha:"aah",alula:"aallu",bib:"bbi",maam:"aam",
+           boob:"bboo",civi:"cciiv",dad:"add",deed:"ddee",deified:"ddeefii",
+           dewed:"ddeew",did:"ddi",dud:"ddu",eke:"eek",eve:"eev",
+           ewe:"eew",eye:"eey",gag:"agg",gig:"ggu",hah:"ahh",heh:"ehh",
+           huh:"hhu",kayak:"aakky",kook:"kkoo",level:"eellv",madam:"aadmm",
+           minim:"iimmn",mom:"mmo",murdrum:"dmmrruu",non:"nno",noon:"nnoo",
+           nun:"nnu",pap:"app",peep:"eepp",pip:"ipp",pop:"opp",
+           pup:"ppu",racecar:"aaccerr",radar:"aadrr",redder:"ddeerr",
+           refer:"eefrr",reifier:"eefiirr",reviver:"eeirrvv",rotor:"oorrt",
+           rotator:"aoorrtt",sagas:"aagss",sees:"eess",sexes:"eessx",
+           sos:"oss",stats:"asstt",tat:"att",tenet:"eentt",terret:"eerrtt",
+           tit:"itt",tnt:"ntt",tot:"ott",rider:"deirr"}
+
+        //Checks whether Palindrome or not
+        const isPalindrome = (str) => {
+            str= str.toLowerCase();
+            //Checks whether reverse Palindrome
+            const check = str.toLowerCase().split('').reverse().join('');
+            if(check===str){
+                return true;
+            }
+            //Checks if not reverse than either palindrome present in b/w.
+           var word_sorted= str.split('').sort().join('').toString(); //aadmm
+           var ans=false;
+           for(key in pdict){
+               if(word_sorted==pdict[key])
+               //Returns key value
+                  ans=key;
+              }
+             return ans;
+           
+        }
+          
+          
+
+        let result= isPalindrome(string1);
+        //If reverse Palindrome
+        if(result==true){
+            console.log("The given word is reverse palindrome");
+        }
+        //If not a Palindrome
+        else if(result==false){
+            console.log("The given word is not palindrome");
+        }
+        //If Palindrome is present in jumbled words
+        else{
+            console.log("The given word " + string1 + " has palindrome " + result + " in it.");
+        }
+
+        
+        
+           
+
+      </script>
+</body>
+</html>
