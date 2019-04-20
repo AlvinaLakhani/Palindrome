@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Input from User
+        var abc=prompt("Enter any word");
+        var palindrome= [];
+        //Checks whether palindrome exists in any word
+        for(var i=0;i<abc.length;i++){
+            var a=abc.substr(i,abc.length);
+            for(var j=abc.length;j>=0;j--){
+                a= a.substr(0,j);
+                //If it does store all plaindromes inside array 'a'
+                if(a==a.split('').reverse().join('')&&a.length>1){
+                    palindrome.push(a);
+            }
+        }
+        }
+        var max;
+        //Finds out the palindrome having maximum length and console it.
+        for(var t=0;t<abc.length;t++){
+            if(palindrome[t]>palindrome[t+1])
+                max=palindrome[t]
+        }
+        console.log(palindrome);
+        console.log(max);
+
+
+
+       
+    
+    </script>
+</body>
+</html>
